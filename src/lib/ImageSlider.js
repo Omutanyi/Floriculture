@@ -65,11 +65,11 @@ const ImageSlider = ({ slides }) => {
                 </div>
 
                 <div className="descCard">
-                  <Typography color="primary" variant="subtitle1">
+                  <Typography color="primary" variant="h5">
                     {slide.name}
                   </Typography>
-                  <Typography variant="subtitle2">{slide.origin}</Typography>
-                  <Typography variant="body2">{slide.description}</Typography>
+                  <Typography variant="subtitle1">{slide.origin}</Typography>
+                  <Typography variant="subtitle2">{slide.description}</Typography>
                   <Typography variant="subtitle2">
                     KSH. {slide.price}
                   </Typography>
