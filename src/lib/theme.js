@@ -9,6 +9,9 @@ const theme = createMuiTheme({
       secondary: {
         main: '#f6830f',
       },
+      price: {
+        main:' #5aa469',
+      },
     },
 });
 

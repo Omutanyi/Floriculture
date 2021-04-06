@@ -5,6 +5,8 @@ html body {
   background-position: center;
   background-size: cover; */
   background-color: #ffe6f2;
+  justify-content: center;
+  align-items: center;
 }
 /* linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),  */
 
@@ -14,6 +16,34 @@ html body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login {
+  /* justify-content: center;
+  align-items: center; */
+  width: 100%;
+  padding: 20px;
+  padding-left: 30%;
+  flex-direction: row;
+  /* background-color: #8B0000; */
+}
+
+.loginA {
+  /* justify-content: center;
+  align-items: center; */
+  float: left;
+  width: 45%;
+  padding: 20px;
+  /* background-color: #8B0000; */
+}
+
+.loginB {
+  /* justify-content: center;
+  align-items: center; */
+  float: right;
+  width: 45%;
+  padding: 20px;
+  background-color: #8B0000;
 }
 
 .featuredCard {
@@ -88,4 +118,20 @@ html body {
 
 .ButtonGroup {
   margin-left: 70%;
+}
+
+.searchDiv {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.searchForm {
+  width: 100%;
+  direction: ltr;
+  flex-direction: row;
+}
+
+.searchInput {
+  width: 100%;
+  float: left;
 }
