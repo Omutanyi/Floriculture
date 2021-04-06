@@ -7,7 +7,11 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 // import { AddShoppingCartIcon } from "@material-ui/icons";
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import AddShoppingCart from "@material-ui/icons/AddShoppingCart";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Product from "./Product";
 
 const Items = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -40,28 +44,35 @@ const Items = ({ slides }) => {
       >
         {SliderData.map((slide, index) => {
           return (
-            <Grid item xs={3}
-            key={index}>
-              {/* <Paper> */}
-              <img
-                src={slide.image}
-                alt={slide.name}
-                className="itemImage"
-              />
-              <Typography color="primary" variant="subtitle1">
-                {slide.name}
-              </Typography>
-              <Typography variant="subtitle2">{slide.origin}</Typography>
-              <Typography variant="subtitle2">KSH. {slide.price}</Typography>
-              <Button
-                color="secondary"
-                variant="outlined"
-                aria-label="ADD TO CART"
+            <Grid item xs={3} key={index}>
+              <Link
+                to={{
+                  pathname: "/product",
+                  state: { slide },
+                }}
+                className="Link"
               >
-                ADD TO CART
-                <KeyboardArrowRightIcon />
-              </Button>
-              {/* </Paper> */}
+                {/* <Paper> */}
+                <img src={slide.image} alt={slide.name} className="itemImage" />
+                <Typography color="primary" variant="subtitle1">
+                  {slide.name}
+                </Typography>
+                <Typography variant="subtitle2">{slide.origin}</Typography>
+                <Typography variant="subtitle2">KSH. {slide.price}</Typography>
+                <Button
+                  color="secondary"
+                  variant="outlined"
+                  aria-label="ADD TO CART"
+                >
+                  <AddShoppingCart
+                    style={{
+                      marginRight: 5,
+                    }}
+                  />
+                  ADD TO CART
+                </Button>
+                {/* </Paper> */}
+              </Link>
             </Grid>
           );
         })}
