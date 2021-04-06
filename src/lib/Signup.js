@@ -78,7 +78,7 @@ class Signup extends Component {
                     margin: 20,
                   }}
                 >
-                  LOGIN
+                  CREATE ACCOUNT
                 </Button>
 
             </div>

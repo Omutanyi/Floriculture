@@ -117,7 +117,7 @@ html body {
 }
 
 .ButtonGroup {
-  margin-left: 70%;
+  margin-left: 60%;
 }
 
 .searchDiv {
@@ -134,4 +134,14 @@ html body {
 .searchInput {
   width: 100%;
   float: left;
+}
+
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+.headerLink {
+  text-decoration: none;
+  color: white;
 }

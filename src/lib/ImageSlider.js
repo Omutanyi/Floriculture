@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import AddShoppingCart from "@material-ui/icons/AddShoppingCart";
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -88,7 +89,7 @@ const ImageSlider = ({ slides }) => {
                     aria-label="PLACE ORDER NOW"
                   >
                     PLACE ORDER NOW
-                    <KeyboardArrowRightIcon />
+                    <AddShoppingCart />
                   </Button>
                 </div>
               </div>
