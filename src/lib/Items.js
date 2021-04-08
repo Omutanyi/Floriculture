@@ -57,8 +57,25 @@ const Items = ({ slides }) => {
                 <Typography color="primary" variant="subtitle1">
                   {slide.name}
                 </Typography>
-                <Typography variant="subtitle2">{slide.origin}</Typography>
-                <Typography variant="subtitle2">KSH. {slide.price}</Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{
+                    marginTop: 10,
+                    opacity: 0.8,
+                  }}
+                >
+                  {slide.origin}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{
+                    marginTop: 10,
+                    marginBottom: 10,
+                    color: "green",
+                  }}
+                >
+                  KSH. {slide.price}
+                </Typography>
                 <Button
                   color="secondary"
                   variant="outlined"
