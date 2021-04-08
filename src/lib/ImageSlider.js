@@ -69,9 +69,21 @@ const ImageSlider = ({ slides }) => {
                   <Typography color="primary" variant="h5">
                     {slide.name}
                   </Typography>
-                  <Typography variant="subtitle1">{slide.origin}</Typography>
-                  <Typography variant="subtitle2">{slide.description}</Typography>
-                  <Typography variant="subtitle2">
+                  <Typography variant="subtitle1"
+              style={{
+                marginTop: 0,
+              }}>{slide.origin}</Typography>
+                  <Typography variant="subtitle2"
+              style={{
+                marginTop: 5,
+                opacity: 0.8,
+              }}>{slide.description}</Typography>
+                  <Typography variant="subtitle2"
+              style={{
+                marginTop: 10,
+                marginBottom: 10,
+                color: 'green',
+              }}>
                     KSH. {slide.price}
                   </Typography>
                   {/* <IconButton

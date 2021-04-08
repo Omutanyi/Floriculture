@@ -145,3 +145,28 @@ html body {
   text-decoration: none;
   color: white;
 }
+
+.cartItem {
+  width: 100%;
+  height: 150px;
+  padding: 30px;
+  flex-direction: row;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+.cartImage {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+.cartDesc {
+  float: left;
+  margin: 10px;
+}
+
+.cartRemove {
+  float: right;
+}
