@@ -4,6 +4,7 @@ import Home from "./Home.js";
 import Signup from "./Signup";
 import Product from "./Product";
 import Cart from "./Cart";
+import AddBouquet from "./AddBouquet"
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import Button from "@material-ui/core/Button";
@@ -129,7 +130,7 @@ function Header() {
                   fontSize: 23,
                 }}
               />
-              <Link to="/" className="Link">
+              <Link to="/addbouquet" className="Link">
                 ADD BOUQUET
               </Link>
             </MenuItem>
@@ -191,6 +192,9 @@ function Header() {
         </Route>
         <Route path="/cart">
           <Cart />
+        </Route>
+        <Route path="/addbouquet">
+          <AddBouquet />
         </Route>
         {/* <Route path="/users">
             <Users />
