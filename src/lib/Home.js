@@ -12,13 +12,72 @@ import Typography from "@material-ui/core/Typography";
 import ImageSlider from "./ImageSlider.js";
 import Items from "./Items.js";
 import Searchbar from "./Searchbar.js";
-import { SliderData } from "./SliderData.js";
+// import { SliderData } from "./SliderData.js";
+import fire from "./config/firebase";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      SliderData: [],
+      items: [],
+    };
+  }
+  async componentDidMount() {
+
+    const sliderD = []
+    const itemD = []
+
+    var storageRef = fire.storage().ref();
+
+   var db = fire.firestore();
+    const valentineRef = db.collection("Valentine");
+    const snapshot = await valentineRef.get();
+    snapshot.forEach((doc) => {
+      console.log("valentine doc id - ", doc.data().image);
+      storageRef.child(doc.data().image).getDownloadURL().then((url) => {
+        // sliderD.push(doc.data(), {imageUrl: url})
+        const data = {
+          data: doc.data(),
+          image: url,
+        }
+
+        sliderD.push(data)
+        })
+        
+
+      // sliderD.push(doc.data())
+      // itemD.push(doc.data())
+    });
+        console.log("sliderD with image url ", sliderD)
+
+    this.setState({
+      SliderData: sliderD,
+    })
+
+    const weddingRef = db.collection("Wedding");
+    const weddingRefSnapshot = await weddingRef.get();
+    weddingRefSnapshot.forEach((doc) => {
+      // console.log("valentine doc id - ", doc.data());
+      itemD.push(doc.data())
+    });
+
+    const LnARef = db.collection("Love and affection");
+    const LnARefSnapshot = await LnARef.get();
+    LnARefSnapshot.forEach((doc) => {
+      // console.log("valentine doc id - ", doc.data());
+      itemD.push(doc.data())
+    });
+
+    this.setState({
+      items: itemD,
+    })
+  }
+
   render() {
     return (
       <>
-        <Searchbar />
+        {/* <Searchbar /> */}
         <Grid container spacing={2} justify="center">
           <Grid item xs={12}>
             <Paper
@@ -35,9 +94,9 @@ class Home extends Component {
                   marginLeft: "45%",
                 }}
               >
-                FEATURED PRODUCTS
+                EDITORS PICKS
               </Typography>
-              <ImageSlider slides={SliderData} />
+              <ImageSlider slides={this.state.SliderData} />
             </Paper>
           </Grid>
 
@@ -58,9 +117,9 @@ class Home extends Component {
                   marginLeft: "45%",
                 }}
               >
-                EDITORS PICKS
+                FEATURED PRODUCTS
               </Typography>
-              <Items slides={SliderData} />
+              <Items slides={this.state.items} />
             </Paper>
           </Grid>
         </Grid>

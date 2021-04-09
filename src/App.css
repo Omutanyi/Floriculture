@@ -106,7 +106,7 @@ html body {
 }
 
 .itemContainer {
-  overflow-x: scroll;
+  overflow-x: wrap;
 }
 
 .itemImage {

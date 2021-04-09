@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SliderData } from "./SliderData";
+// import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
@@ -31,8 +31,8 @@ const Items = ({ slides }) => {
 
   return (
     <section className="slider">
-      <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+      {/* <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} /> */}
 
       <Grid
         container
@@ -42,7 +42,7 @@ const Items = ({ slides }) => {
         direction="row"
         xs={12}
       >
-        {SliderData.map((slide, index) => {
+        {slides.map((slide, index) => {
           return (
             <Grid item xs={3} key={index}>
               <Link
@@ -64,7 +64,7 @@ const Items = ({ slides }) => {
                     opacity: 0.8,
                   }}
                 >
-                  {slide.origin}
+                  {slide.collection}
                 </Typography>
                 <Typography
                   variant="subtitle2"

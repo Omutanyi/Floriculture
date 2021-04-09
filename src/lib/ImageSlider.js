@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SliderData } from "./SliderData";
+// import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
@@ -11,6 +11,7 @@ import AddShoppingCart from "@material-ui/icons/AddShoppingCart";
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
+  console.log(" slide data", slides)
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -28,7 +29,7 @@ const ImageSlider = ({ slides }) => {
     <section className="slider">
       <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
       <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-      {SliderData.map((slide, index) => {
+      {slides.map((slide, index) => {
         return (
           //   <Grid
           //     item
@@ -62,29 +63,29 @@ const ImageSlider = ({ slides }) => {
             {index === current && (
               <div className="featuredCard" xs={12}>
                 <div className="imageCard">
-                  <img src={slide.image} alt={slide.name} className="image" />
+                  <img src={slide.image} alt={slide.data.name} className="image" />
                 </div>
 
                 <div className="descCard">
                   <Typography color="primary" variant="h5">
-                    {slide.name}
+                    {slide.data.name}
                   </Typography>
                   <Typography variant="subtitle1"
               style={{
                 marginTop: 0,
-              }}>{slide.origin}</Typography>
+              }}>{slide.data.collection}</Typography>
                   <Typography variant="subtitle2"
               style={{
                 marginTop: 5,
                 opacity: 0.8,
-              }}>{slide.description}</Typography>
+              }}>{slide.data.description}</Typography>
                   <Typography variant="subtitle2"
               style={{
                 marginTop: 10,
                 marginBottom: 10,
                 color: 'green',
               }}>
-                    KSH. {slide.price}
+                    KSH. {slide.data.price}
                   </Typography>
                   {/* <IconButton
                     color="secondary"
